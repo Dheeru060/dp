@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <style>
+      #mid {
+  height: 60%;
+  width: 30%;
+  background-color: rgb(28, 127, 207);
+  position: relative;
+  left: 35%;
+  top: 15%;
+  border-radius: 10%;
+}
+
+#ubimg {
+  background-color: white;
+  border-color: rgb(14, 10, 10);
+  border-radius: 5%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  visibility: hidden;
+}
+
+
+
+#uploadbutt {
+  background-color: rgb(14, 10, 10);
+  border-color: rgb(14, 10, 10);
+  border-radius: 5%;
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  color: white;
+  font-size: medium;
+}
+
+#description {
+  background-color: rgb(194, 202, 164);
+  border-color: wheat;
+  border-radius: 10;
+  position: relative;
+  top: 15%;
+  height: 15%;
+  width: 80%;
+  left: 10%;
+
+}
+
+body {
+  background-color:aquamarine;
+}
+    </style>
+  </head>
+  <body>
+    <div id="mid">
+      <button id="uploadbutt">Upload Image</button>
+      <img src="" alt="" id="ubimg">
+      <textarea id="description"></textarea>
+    </div>
+    <script>
+      document.getElementById("uploadbutt").addEventListener("click", function () {
+  var fileIn = document.createElement("input");
+  fileIn.type = "file";
+  fileIn.accept = "image/jpeg, image/png";
+  fileIn.click();
+  fileIn.addEventListener("change", function () {
+    readURL(fileIn);
+  });
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.readAsDataURL(input.files[0]);
+    reader.onload = function (e) {
+      document.getElementById("ubimg").setAttribute("src", e.target.result);
+    };
+
+    document.getElementById("ubimg").style.visibility = "visible";
+  }
+}
+    </script>
+  </body>
+</html>
