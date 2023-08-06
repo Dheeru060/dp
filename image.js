@@ -19,6 +19,7 @@ function previewAndGetBase64() {
     const img = document.getElementById("previewImage");
     
     // Extract base64 data
+    print(this.result)
     let base64 = this.result.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "");
     img.src = this.result;
     
