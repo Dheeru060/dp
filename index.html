@@ -1,9 +1,15 @@
 <!-- File input to select image -->
 <input type="file" id="imageInput" accept="image/*">
 <input type="text" id="searchBox">
+<style>
+  .custom-image{
+	height: 50px;
+	max-width: 200px;
+}
+</style>
 
 <!-- Container to display image preview -->  
 <div id="preview">
-  <img id="previewImage" src=""> 
+  <img id="previewImage" class="custom-image" src=""> 
 </div>
 <script src="image.js"></script>
